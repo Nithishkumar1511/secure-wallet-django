@@ -1,0 +1,13 @@
+CREATE DATABASE securewallet CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE securewallet;
+
+CREATE TABLE wallet_imageupload (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    image_name VARCHAR(255) NOT NULL,
+    image_data LONGBLOB NOT NULL,
+    uploaded_at DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES auth_user(id)
+        ON DELETE CASCADE
+);

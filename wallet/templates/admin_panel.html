@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Secure Wallet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            padding: 40px;
+            text-align: center;
+        }
+        h2 {
+            color: #0f172a;
+            margin-bottom: 30px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #ffffff;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        th {
+            background-color: #1e40af;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Uploaded Files</h2>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Uploaded At</th>
+        </tr>
+        {% for upload in uploads %}
+        <tr>
+            <td>{{ upload.user.username }}</td>
+            <td>{{ upload.uploaded_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

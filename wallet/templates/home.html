@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Wallet - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+        }
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 40px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .btn {
+            padding: 15px 30px;
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Secure Wallet</h1>
+    <div class="buttons">
+        <form action="{% url 'register' %}">
+            <button class="btn">New User</button>
+        </form>
+        <form action="{% url 'login' %}">
+            <button class="btn">Existing User</button>
+        </form>
+        <form action="{% url 'admin_login' %}">
+            <button class="btn">Admin</button>
+        </form>
+    </div>
+</body>
+</html>
